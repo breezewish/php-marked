@@ -1,0 +1,21 @@
+{
+    "name": "breeswish/php-marked",
+    "description": "A PHP markdown parser, ported from marked. Built for speed.",
+    "keywords": ["markdown", "parser", "marked"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Breezewish",
+            "email": "me@breeswish.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "php": ">5.3.0"
+    }
+}
