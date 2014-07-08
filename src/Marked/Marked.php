@@ -207,7 +207,6 @@ Marked::$defaults = array(
     'pedantic' => false,
     'sanitize' => false,
     'smartLists' => false,
-    'silent' => false,
     'highlight' => null,
     'langPrefix' => 'lang-',
     'smartypants' => false,
