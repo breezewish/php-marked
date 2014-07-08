@@ -25,6 +25,24 @@ A full-featured PHP markdown parser.
 
 - Composer
 
+## Installation
+
+create `composer.json`:
+
+```json
+{
+    "require": {
+        "breeswish/php-marked": "dev-master"
+    }
+}
+```
+
+run:
+
+```bash
+php composer.phar install
+```
+
 ## Usage
 
 Minimal usage:
