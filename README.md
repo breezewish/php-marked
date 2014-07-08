@@ -3,7 +3,7 @@ php-marked - Yet Another PHP Markdown Parser
 
 A full-featured PHP markdown parser.
 
-- Ported from [chjj/marked][marked]
+- Ported from [chjj/marked][marked], consistent with previewing by JavaScript
 
 - Support [Github Flavoured Markdown][gfm]
 
@@ -151,11 +151,11 @@ The prefix to be append in the `id` attribute of headers.
 
 ## Testing
 
-run `phpunit`
+run `phpunit`.
 
 ## License
 
-The MIT License
+The MIT License.
 
 [marked]: https://github.com/chjj/marked
 [gfm]: https://help.github.com/articles/github-flavored-markdown
