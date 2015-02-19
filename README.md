@@ -74,7 +74,7 @@ String of markdown source to be compiled.
 
 Type: `array`
 
-Hash of options. Can also be set using the `marked::setOptions` method as seen above.
+Hash of options. Can also be set using the `Marked::setOptions` method as seen above.
 
 ## Basic Options
 

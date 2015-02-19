@@ -17,9 +17,7 @@ class Marked
 
     public static function options($opt)
     {
-        foreach ($opt as $k => $v) {
-            self::$defaults[$k] = $v;
-        }
+        self::$defaults = array_merge(self::$defaults, $opt);
     }
 
     public static function setOptions($opt)
@@ -29,10 +27,11 @@ class Marked
 
     public static function render($src, $opt = null)
     {
-        if ($opt == null) {
-            $opt = array_merge(array(), Marked::$defaults);
+        if ($opt === null) {
+            $opt = array();
         }
 
+        $opt = array_merge(self::$defaults, $opt);
         $tokens = Lexer::doLex($src, $opt);
 
         if (isset($opt['highlight']) && count($tokens['tokens']) > 0) {
@@ -114,12 +113,12 @@ Marked::$block['paragraph'] = Utils::replace(Marked::$block['paragraph'], array(
 /**
  * Normal Block Grammar
  */
-Marked::$block['normal'] = array_merge(array(), Marked::$block);
+Marked::$block['normal'] = Marked::$block;
 
 /**
  * GFM Block Grammar
  */
-Marked::$block['gfm'] = array_merge(array(), Marked::$block['normal']);
+Marked::$block['gfm'] = Marked::$block['normal'];
 Marked::$block['gfm']['fences'] = new RegExp('^ *(`{3,}|~{3,}) *(\\S+)? *\\n([\\s\\S]+?)\\s*\\1 *(?:\\n+|$)');
 Marked::$block['gfm']['paragraph'] = new RegExp('^');
 Marked::$block['gfm']['paragraph'] = Utils::replace(Marked::$block['paragraph'], array(
@@ -131,7 +130,7 @@ Marked::$block['gfm']['paragraph'] = Utils::replace(Marked::$block['paragraph'],
 /**
  * GFM + Tables Block Grammar
  */
-Marked::$block['tables'] = array_merge(array(), Marked::$block['gfm']);
+Marked::$block['tables'] = Marked::$block['gfm'];
 Marked::$block['tables']['nptable'] = new RegExp('^ *(\\S.*\\|.*)\\n *([-:]+ *\\|[-| :]*)\\n((?:.*\\|.*(?:\\n|$))*)\\n*');
 Marked::$block['tables']['table'] = new RegExp('^ *\\|(.+)\\n *\\|( *[-:]+[-| :]*)\\n((?: *\\|.*(?:\\n|$))*)\\n*');
 
@@ -169,19 +168,19 @@ Marked::$inline['reflink'] = Utils::replace(Marked::$inline['reflink'], array(
 /**
  * Normal Inline Grammar
  */
-Marked::$inline['normal'] = array_merge(array(), Marked::$inline);
+Marked::$inline['normal'] = Marked::$inline;
 
 /**
  * Pedantic Inline Grammar
  */
-Marked::$inline['pedantic'] = array_merge(array(), Marked::$inline['normal']);
+Marked::$inline['pedantic'] = Marked::$inline['normal'];
 Marked::$inline['pedantic']['strong'] = new RegExp('^__(?=\\S)([\\s\\S]*?\\S)__(?!_)|^\\*\\*(?=\\S)([\\s\\S]*?\\S)\\*\\*(?!\\*)');
 Marked::$inline['pedantic']['em'] = new RegExp('^_(?=\\S)([\\s\\S]*?\\S)_(?!_)|^\\*(?=\\S)([\\s\\S]*?\\S)\\*(?!\\*)');
 
 /**
  * GFM Inline Grammar
  */
-Marked::$inline['gfm'] = array_merge(array(), Marked::$inline['normal']);
+Marked::$inline['gfm'] = Marked::$inline['normal'];
 Marked::$inline['gfm']['escape'] = Utils::replace(Marked::$inline['escape'], array( array('])', '~|])') ));
 Marked::$inline['gfm']['url'] = new RegExp('^(https?:\\/\\/[^\\s<]+[^<.,:;"\')\\]\\s])');
 Marked::$inline['gfm']['del'] = new RegExp('^~~(?=\\S)([\\s\\S]*?\\S)~~');
@@ -193,7 +192,7 @@ Marked::$inline['gfm']['text'] = Utils::replace(Marked::$inline['text'], array(
 /**
  * GFM + Line Breaks Inline Grammar
  */
-Marked::$inline['breaks'] = array_merge(array(), Marked::$inline['gfm']);
+Marked::$inline['breaks'] = Marked::$inline['gfm'];
 Marked::$inline['breaks']['br'] = Utils::replace(Marked::$inline['br'], array( array('{2,}', '*') ));
 Marked::$inline['breaks']['text'] = Utils::replace(Marked::$inline['gfm']['text'], array( array('{2,}', '*') ));
 
