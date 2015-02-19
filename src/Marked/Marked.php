@@ -1,12 +1,12 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
-use Marked\RegExp;
-use Marked\Utils;
-use Marked\Renderer;
-use Marked\Lexer;
-use Marked\Parser;
+use Breezewish\Marked\RegExp;
+use Breezewish\Marked\Utils;
+use Breezewish\Marked\Renderer;
+use Breezewish\Marked\Lexer;
+use Breezewish\Marked\Parser;
 
 class Marked
 {

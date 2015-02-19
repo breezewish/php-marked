@@ -1,6 +1,6 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
 class Renderer
 {
@@ -146,7 +146,7 @@ class Renderer
             } catch (\Exception $e) {
                 return '';
             }
-            if (strpos($prot, 'javascript:') === 0) {
+            if (strpos($prot, 'javascript:') === 0 || strpos($prot, 'vbscript:') === 0) {
                 return '';
             }
         }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
-use Marked\Marked;
+use Breezewish\Marked\Marked;
 
 class Lexer
 {

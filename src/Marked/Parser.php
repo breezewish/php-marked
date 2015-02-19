@@ -1,10 +1,10 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
-use Marked\Marked;
-use Marked\Renderer;
-use Marked\InlineLexer;
+use Breezewish\Marked\Marked;
+use Breezewish\Marked\Renderer;
+use Breezewish\Marked\InlineLexer;
 
 class Parser
 {

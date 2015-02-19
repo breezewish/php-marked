@@ -11,8 +11,8 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-0": {
-            "": "src/"
+        "psr-4": {
+            "Breezewish\\Marked\\": "src/Marked"
         }
     },
     "require": {

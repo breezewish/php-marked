@@ -27,20 +27,9 @@ A full-featured PHP markdown parser.
 
 ## Installation
 
-create `composer.json`:
-
-```json
-{
-    "require": {
-        "breeswish/php-marked": "dev-master"
-    }
-}
-```
-
-run:
-
 ```bash
-php composer.phar install
+composer require "breeswish/php-marked"
+
 ```
 
 ## Usage
@@ -48,14 +37,14 @@ php composer.phar install
 Minimal usage:
 
 ```php
-echo \Marked\Marked::render('I am using __markdown__.');
+echo \Breezewish\Marked\Marked::render('I am using __markdown__.');
 // => <p>I am using <strong>markdown</strong>.</p>
 ```
 
 Example setting options with default values:
 
 ```php
-\Marked\Marked::setOptions(array(
+\Breezewish\Marked\Marked::setOptions(array(
     'gfm'          => true,
     'tables'       => true,
     'breaks'       => false,
@@ -67,11 +56,25 @@ Example setting options with default values:
     'xhtml'        => false,
     'headerPrefix' => '',
     'highlight'    => null,
-    'renderer'     => new \Marked\Renderer()
+    'renderer'     => new \Breezewish\Marked\Renderer()
 ));
 
-echo \Marked\Marked::render('I am using __markdown__.');
+echo \Breezewish\Marked\Marked::render('I am using __markdown__.');
 ```
+
+## Marked::render(markdownString [,options])
+
+### markdownString
+
+Type: `string`
+
+String of markdown source to be compiled.
+
+### options
+
+Type: `array`
+
+Hash of options. Can also be set using the `marked::setOptions` method as seen above.
 
 ## Basic Options
 

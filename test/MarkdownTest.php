@@ -7,13 +7,13 @@ class MarkdownTest extends PHPUnit_Framework_TestCase
      */
     public function testMarkdown($name, $markdown, $expected, $options)
     {
-        $def = \Marked\Marked::$defaults;
+        $def = \Breezewish\Marked\Marked::$defaults;
 
-        \Marked\Marked::setOptions($options);
-        $html = \Marked\Marked::render($markdown);
+        \Breezewish\Marked\Marked::setOptions($options);
+        $html = \Breezewish\Marked\Marked::render($markdown);
 
         //restore default options
-        \Marked\Marked::$defaults = $def;
+        \Breezewish\Marked\Marked::$defaults = $def;
 
         $this->assertEquals(preg_replace('/\\s/', '', $expected), preg_replace('/\\s/', '', $html), sprintf('%s failed', $name));
     }

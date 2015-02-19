@@ -1,8 +1,8 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
-use Marked\RegExp;
+use Breezewish\Marked\RegExp;
 
 class Utils
 {

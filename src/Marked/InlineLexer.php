@@ -1,10 +1,10 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
-use Marked\Marked;
-use Marked\Utils;
-use Marked\Renderer;
+use Breezewish\Marked\Marked;
+use Breezewish\Marked\Utils;
+use Breezewish\Marked\Renderer;
 
 class InlineLexer
 {

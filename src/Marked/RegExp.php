@@ -1,6 +1,6 @@
 <?php
 
-namespace Marked;
+namespace Breezewish\Marked;
 
 class RegExp
 {
